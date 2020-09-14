@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971Project.NewTermForm"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             Title="New Term">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <Label Text="Add New Term"
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="titleEntry"
+                   Placeholder="Term Title" />
+            <Picker x:Name="statusEntry" 
+                    Title="Status">
+                <Picker.Items>
+                    <x:String>Upcoming</x:String>
+                    <x:String>In Progress</x:String>
+                    <x:String>Completed</x:String>
+                </Picker.Items>
+            </Picker>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Start Date:" />
+                <DatePicker x:Name="startdateEntry"
+                            Date="{x:Static sys:DateTime.Today}" />
+                <Label Text="End Date:" />
+                <DatePicker x:Name="enddateEntry"
+                            Date="{x:Static sys:DateTime.Today}" />
+            </StackLayout>
+            <Button Text="Submit" Clicked="Button_Clicked"/>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

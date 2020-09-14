@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971Project.EditTermForm"
+             Title="Edit Term">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <Label Text="Term Details"
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="titleEntry" Placeholder="Term Title" />
+            <Picker x:Name="statusEntry" Title="Status">
+                <Picker.Items>
+                    <x:String>Upcoming</x:String>
+                    <x:String>In Progress</x:String>
+                    <x:String>Completed</x:String>
+                </Picker.Items>
+            </Picker>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Start Date:" />
+                <DatePicker x:Name="startdateEntry" Date="1/1/2020" />
+                <Label Text="End Date:" />
+                <DatePicker x:Name="enddateEntry" Date="1/1/2020" />
+            </StackLayout>
+            <Button Text="Update" Clicked="Button_Clicked" />
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

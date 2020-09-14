@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971Project.CoursePage"
+             Title="{Binding Name}">
+    <ScrollView>
+        <StackLayout Padding="5">
+        <StackLayout Orientation="Horizontal">
+            <Label Text="{Binding Name}" FontSize="Title" TextColor="Navy" HorizontalOptions="FillAndExpand" />
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Course Status: " TextColor="Navy"/>
+                        <Span x:Name="CourseStatus" Text="{Binding CurrentStatus}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Start Date:" FontSize="Medium" TextColor="Navy"/>
+            <Label Text="{Binding StartDate, StringFormat='{0:M/dd/yy}'}" FontSize="Medium"/>
+            <Label Text="End Date:" FontSize="Medium" TextColor="Navy"/>
+            <Label Text="{Binding EndDate, StringFormat='{0:M/dd/yy}'}" FontSize="Medium"/>
+        </StackLayout>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Instructor: " TextColor="Navy" />
+                    <Span x:Name="InstructorName" Text="{Binding InstructorName}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Instructor Phone: " TextColor="Navy"/>
+                    <Span x:Name="InstructorPhone" Text="{Binding InstructorPhone}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Instructor Email: " TextColor="Navy" />
+                    <Span x:Name="InstructorEmail" Text="{Binding InstructorEmail}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Objective Assessment" FontSize="Medium" TextColor="Blue" HorizontalOptions="FillAndExpand" />
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="OA Status: " TextColor="Blue" />
+                        <Span x:Name="OAStatus" Text="{Binding OAStatus}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+            <Label Text="{Binding OAName, StringFormat='Name: {0}'}" />
+            <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Start to End Date:" />
+                    <Span Text="{Binding OAStart, StringFormat='{0:M/dd/yy}'}" />
+                    <Span Text=" to " />
+                    <Span Text="{Binding OAEnd, StringFormat='{0:M/dd/yy}'}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label Text="OA Notes:" />
+        <Label Text="{Binding OANotes}" />
+            <StackLayout Orientation="Horizontal" Padding="-5">
+                <Button Text="Share OA Notes" HeightRequest="40" Clicked="Button_Clicked_ShareNotesOA"/>
+                <Button Text="Set Reminder" HeightRequest="40" Margin="-4,0,-4,0" Clicked="Button_Clicked_SetReminderOA"/>
+                <Button Text="Delete OA" HeightRequest="40" TextColor="DarkRed" Clicked="Button_Clicked_DeleteOA"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+            <Label Text="Performance Assessment" FontSize="Medium" TextColor="Blue" HorizontalOptions="FillAndExpand" />
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="PA Status: " TextColor="Blue" />
+                        <Span x:Name="PAStatus" Text="{Binding PAStatus}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+            <Label Text="{Binding PAName, StringFormat='Name: {0}'}" />
+            <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Start to End Date:" />
+                    <Span Text="{Binding PAStart, StringFormat='{0:M/dd/yy}'}" />
+                    <Span Text=" to " />
+                    <Span Text="{Binding PAEnd, StringFormat='{0:M/dd/yy}'}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label Text="PA Notes:" />
+            <Label Text="{Binding PANotes}" />
+            <StackLayout Orientation="Horizontal" Padding="-5">
+                <Button Text="Share PA Notes" HeightRequest="40" Clicked="Button_Clicked_ShareNotesPA"/>
+                <Button Text="Set Reminder" HeightRequest="40" Margin="-4,0,-4,0" Clicked="Button_Clicked_SetReminderPA" />
+                <Button Text="Delete PA" HeightRequest="40" TextColor="DarkRed" Clicked="Button_Clicked_DeletePA" />
+            </StackLayout>
+            <Button Text="Edit Course Details" Clicked="Button_Clicked" Margin="0,0,0,-10"/>
+            <Button Text="Delete Course" TextColor="DarkRed" Clicked="Button_Clicked_DeleteCourse"/>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

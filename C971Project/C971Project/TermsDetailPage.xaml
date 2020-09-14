@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971Project.TermsDetailPage"
+             Title="Term Details">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="plus.png" Text="Add New Course" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding Title}" FontSize="Title" TextColor="Navy" HorizontalOptions="FillAndExpand"/>
+                <Label Text="Term Status:" TextColor="Navy" />
+                <Label Text="{Binding TermStatus}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Start Date:" FontSize="Medium" TextColor="Navy" />
+                <Label Text="{Binding TermStart, StringFormat='{0:M/dd/yy}'}" />
+                <Label Text="End Date:" FontSize="Medium" TextColor="Navy" />
+                <Label Text="{Binding TermEnd, StringFormat='{0:M/dd/yy}'}" />
+            </StackLayout>
+            <Label Text="Courses:"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Blue"
+                   Margin="0,20,0,0"
+                   FontSize="Medium"/>
+            <ListView x:Name="listView" 
+                        HasUnevenRows="True"
+                        ItemSelected="listView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="5">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding Name}" TextColor="Blue" />
+                                            <Span Text=" - " />
+                                            <Span Text="{Binding CurrentStatus}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="5">
+                                    <Label Text="Dates:" TextColor="Blue" />
+                                    <Label Text="{Binding StartDate, StringFormat='{0:M/dd/yy}'}" />
+                                <Label Text="to" />
+                                <Label Text="{Binding EndDate, StringFormat='{0:M/dd/yy}'}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Footer>
+                <StackLayout>
+                    <Button Text="Edit Term Details" Clicked="Button_Clicked"/>
+                    <Button Text="Delete Term" TextColor="DarkRed" Clicked="Button2_Clicked" />
+                </StackLayout>
+            </ListView.Footer>
+        </ListView>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

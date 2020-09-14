@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971Project.EditCourseForm"
+             Title="Edit Course">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="5">
+            <Label Text="Edit Course"
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="titleEntry" Placeholder="Course Title" />
+            <Picker x:Name="statusEntry" Title="Status">
+                <Picker.Items>
+                    <x:String>Upcoming</x:String>
+                    <x:String>In Progress</x:String>
+                    <x:String>Completed</x:String>
+                </Picker.Items>
+            </Picker>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Course Start Date:" />
+                <DatePicker x:Name="startEntry" Date="1/1/2020" />
+                <Label Text="Course End Date:" />
+                <DatePicker x:Name="endEntry" Date="1/1/2020" />
+            </StackLayout>
+            <Entry x:Name="instructorEntry" Placeholder="Instructor Name" />
+            <Entry x:Name="instructorphoneEntry" Keyboard="Telephone" Placeholder="Instructor Phone" />
+            <Entry x:Name="instructoremailEntry" Keyboard="Email" Placeholder="Instructor Email" />
+            <Label Text="Assessments" HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="OAentry" Placeholder="Objective Assessment Name" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="OA Start Date:" />
+                <DatePicker x:Name="OAstartEntry" Date="1/1/2020" />
+                <Label Text="OA End Date:" />
+                <DatePicker x:Name="OAendEntry" Date="1/1/2020" />
+            </StackLayout>
+            <Picker x:Name="OAstatusEntry" Title="OA Status">
+                <Picker.Items>
+                    <x:String>Upcoming</x:String>
+                    <x:String>In Progress</x:String>
+                    <x:String>Completed</x:String>
+                </Picker.Items>
+            </Picker>
+            <StackLayout>
+                <Editor x:Name="OAnotesEntry" Placeholder="OA Notes (optional)" />
+            </StackLayout>
+            <Entry x:Name="PAentry" Placeholder="Performance Assessment Name" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="PA Start Date:" />
+                <DatePicker x:Name="PAstartEntry" Date="1/1/2020" />
+                <Label Text="PA End Date:" />
+                <DatePicker x:Name="PAendEntry" Date="1/1/2020" />
+            </StackLayout>
+            <Picker x:Name="PAstatusEntry" Title="PA Status">
+                <Picker.Items>
+                    <x:String>Upcoming</x:String>
+                    <x:String>In Progress</x:String>
+                    <x:String>Completed</x:String>
+                </Picker.Items>
+            </Picker>
+                <StackLayout>
+                    <Editor x:Name="PAnotesEntry" Placeholder="PA Notes (optional)" />
+                </StackLayout>
+                <Button Text="Update" Clicked="Button_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971Project.NewCourseForm"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             Title="New Course">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="5">
+                <Label Text="Course Info"
+                HorizontalOptions="CenterAndExpand" />
+                <Entry x:Name="titleEntry" Placeholder="Course Title" />
+                <Picker x:Name="statusEntry" Title="Status">
+                    <Picker.Items>
+                        <x:String>Upcoming</x:String>
+                        <x:String>In Progress</x:String>
+                        <x:String>Completed</x:String>
+                    </Picker.Items>
+                </Picker>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Course Start Date:" />
+                    <DatePicker x:Name="startdateEntry" Date="{x:Static sys:DateTime.Today}" />
+                    <Label Text="Course End Date:" />
+                    <DatePicker x:Name="enddateEntry" Date="{x:Static sys:DateTime.Today}" />
+                </StackLayout>
+                <Entry x:Name="instructorEntry" Placeholder="Instructor Name" />
+                <Entry x:Name="instructorphoneEntry" Keyboard="Telephone" Placeholder="Instructor Phone" />
+                <Entry x:Name="instructoremailEntry" Keyboard="Email" Placeholder="Instructor Email" />
+                <Label Text="Assessments" HorizontalOptions="CenterAndExpand" />
+                <Entry x:Name="OAEntry" Placeholder="Objective Assessment Name" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="OA Start Date:" />
+                    <DatePicker x:Name="OAstartEntry" Date="{x:Static sys:DateTime.Today}" />
+                    <Label Text="OA End Date:" />
+                    <DatePicker x:Name="OAendEntry" Date="{x:Static sys:DateTime.Today}" />
+                </StackLayout>
+                <Picker x:Name="OAstatusEntry" Title="OA Status">
+                    <Picker.Items>
+                        <x:String>Upcoming</x:String>
+                        <x:String>In Progress</x:String>
+                        <x:String>Completed</x:String>
+                    </Picker.Items>
+                </Picker>
+                <StackLayout>
+                    <Editor x:Name="OAnotesEntry" Placeholder="OA Notes (optional)" />
+                </StackLayout>
+                <Entry x:Name="PAEntry" Placeholder="Performance Assessment Name" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="PA Start Date:" />
+                    <DatePicker x:Name="PAstartEntry" Date="{x:Static sys:DateTime.Today}" />
+                    <Label Text="PA End Date:" />
+                    <DatePicker x:Name="PAendEntry" Date="{x:Static sys:DateTime.Today}" />
+                </StackLayout>
+                <Picker x:Name="PAstatusEntry" Title="PA Status">
+                    <Picker.Items>
+                        <x:String>Upcoming</x:String>
+                        <x:String>In Progress</x:String>
+                        <x:String>Completed</x:String>
+                    </Picker.Items>
+                </Picker>
+                <StackLayout>
+                    <Editor x:Name="PAnotesEntry" Placeholder="PA Notes (optional)" />
+                </StackLayout>
+                <Button Text="Submit" Clicked="Button_Clicked"/>
+            </StackLayout>
+            <!--<TableView Intent="Form">
+            <TableRoot>
+                <TableSection Title="Course Info">
+                    <EntryCell Label="Course Title" />
+                    <ViewCell>
+                        <StackLayout Padding="12,-5,6,0">
+                            <Picker Title="Status">
+                                <Picker.Items>
+                                    <x:String>Upcoming</x:String>
+                                    <x:String>In Progress</x:String>
+                                    <x:String>Completed</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="0,5,0,0">
+                            <Label Text="Course Start:" HorizontalTextAlignment="End" Margin="15,10,0,10" />
+                            <DatePicker Date="{x:Static sys:DateTime.Today}" />
+                            <Label Text="Course End:" HorizontalTextAlignment="End" Margin="0,10,0,10"/>
+                            <DatePicker Date="{x:Static sys:DateTime.Today}" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection Title="Assessments">
+                    <EntryCell />
+                    <ViewCell>
+                        <Button Text="Submit"/>
+                    </ViewCell>
+                </TableSection>             
+            </TableRoot>
+        </TableView>-->
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

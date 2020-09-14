@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971Project.TermsMainPage"
+             NavigationPage.HasNavigationBar="True">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="plus.png" Text="Add New Term" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24, 0, 24, 24" CornerRadius="0">
+            <Label Text="Academic Progress" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <ListView x:Name="TermsListView" 
+                  HasUnevenRows="True"
+                  ItemSelected="TermsListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="5">
+                            <StackLayout Orientation="Horizontal" Padding="5">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding Title}" TextColor="Navy" FontSize="Large"/>
+                                            <Span Text=" - " FontSize="Medium"/>
+                                            <Span Text="{Binding TermStatus}" FontSize="Medium"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="5">
+                                <Label Text="{Binding TermStart, StringFormat='{0:M/dd/yy}'}" FontSize="Medium"/>
+                                <Label Text="-" FontSize="Medium" />
+                                <Label Text="{Binding TermEnd, StringFormat='{0:M/dd/yy}'}" FontSize="Medium"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Add test data" Clicked="Button_Clicked" />
+    </StackLayout>
+    
+</ContentPage>
